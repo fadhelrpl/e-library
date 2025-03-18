@@ -3,14 +3,14 @@
         <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
             <div class="shrink-0">
-                <a href="/"><img class="size-8" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"></a>     
+                <a href="/"><img class="size-8" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"></a>
             </div>
             <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Homepage</a>
-                <a href="/hall" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Hall</a>
-                <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="/" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">Homepage</a>
+                <a href="/hall" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('hall*') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">Hall</a>
+                <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium {{ request()->is('about*') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">About</a>
             </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                     From: "transform opacity-100 scale-100"
                     To: "transform opacity-0 scale-95"
                 -->
-                <div 
+                <div
                 x-show="isOpen"
                 x-transition:enter="transition ease-out duration-100 transform"
                 x-transition:enter-start="opacity-0 scale-95"
@@ -83,9 +83,9 @@
     <div x-show="isOpen" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Homepage</a>
-            <a href="/hall" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Hall</a>
-            <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+            <a href="/" class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">Homepage</a>
+            <a href="/hall" class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is('hall*') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">Hall</a>
+            <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is('about*') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">About</a>
         </div>
         <div class="border-t border-gray-700 pt-4 pb-3">
         <div class="flex items-center px-5">
