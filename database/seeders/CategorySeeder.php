@@ -15,20 +15,20 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             [
-                'name'=> 'Novel',
-                'slug'=> 'novel',
+                'name' => 'Novel',
+                'slug' => 'novel',
             ],
             [
-                'name'=> 'Biografi',
-                'slug'=> 'biografi',
+                'name' => 'Biografi',
+                'slug' => 'biografi',
             ],
             [
-                'name'=> 'Comic',
-                'slug'=> 'comic',
+                'name' => 'Comic',
+                'slug' => 'comic',
             ],
             [
-                'name'=> 'Fantasy',
-                'slug'=> 'fantasy',
+                'name' => 'Fantasy',
+                'slug' => 'fantasy',
             ]
         ]);
     }
